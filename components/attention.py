@@ -29,7 +29,7 @@ class Attention(nn.Module):
         x: mx.array,
         mask: mx.array | None = None,
         cache: Tuple[mx.array, mx.array] | None = None,
-    ) -> mx.array:
+    ) -> Tuple[mx.array, Tuple[mx.array, mx.array]]:
         B, L, D = (
             x.shape
         )  # batch_size, sequence_length, dimension（ここでのbatch_sizeは同時に処理するサンプルの数）
@@ -67,4 +67,4 @@ class Attention(nn.Module):
         output = output.transpose(0, 2, 1, 3).reshape(B, L, -1)
 
         # 重みを掛けて出力
-        return self.wo(output)
+        return self.wo(output), (keys, values)
