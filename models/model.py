@@ -6,6 +6,13 @@ from model_config import ModelConfig
 
 
 class BaseModel(nn.Module):
+    """
+    モデルの基底クラス
+    モデルの構造を定義する
+    Args:
+        config: モデルの設定
+    """
+
     def __init__(self, config: ModelConfig):
         super().__init__()
         self.vocab_size: int = config.vocab_size
