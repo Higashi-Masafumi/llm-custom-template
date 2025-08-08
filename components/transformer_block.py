@@ -1,5 +1,3 @@
-from typing import Tuple
-
 import mlx.core as mx
 import mlx.nn as nn
 
@@ -25,8 +23,8 @@ class TransformerBlock(nn.Module):
         self,
         x: mx.array,
         mask: mx.array | None = None,
-        cache: Tuple[mx.array, mx.array] | None = None,
-    ) -> Tuple[mx.array, Tuple[mx.array, mx.array]]:
+        cache: tuple[mx.array, mx.array] | None = None,
+    ) -> tuple[mx.array, tuple[mx.array, mx.array]]:
         r, cache = self.attention(
             x=self.attention_norm(x),
             mask=mask,
