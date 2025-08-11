@@ -61,3 +61,28 @@ class ModelConfig(BaseModel):
         title="Rope theta",
         description="The theta value for the rope scaling factor.",
     )
+    moe_config: "MixtureOfExpertsConfig" | None = Field(
+        None,
+        title="Mixture of Experts configuration",
+        description="The configuration for the Mixture of Experts.",
+    )
+
+
+class MixtureOfExpertsConfig(BaseModel):
+    """Mixture of Experts configuration
+
+    Args:
+        num_experts: モデルの専門家の数
+        num_experts_per_token: モデルのトークンごとの専門家の数
+    """
+
+    num_experts: StrictInt = Field(
+        ...,
+        title="Number of experts",
+        description="The number of experts in the model.",
+    )
+    num_experts_per_token: StrictInt = Field(
+        ...,
+        title="Number of experts per token",
+        description="The number of experts per token in the model.",
+    )
