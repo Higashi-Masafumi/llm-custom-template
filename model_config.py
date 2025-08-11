@@ -14,6 +14,7 @@ class ModelConfig(BaseModel):
         norm_eps: モデルの正規化層のepsilon値(Layer Normalizationのepsilon: https://docs.pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html)
         vocab_size: モデルの語彙のサイズ
         rope_theta: モデルのRopeスケーリング係数のtheta値（Ropeのスケーリング係数: https://arxiv.org/pdf/1706.03762#page=6）
+        moe_config: モデルのMixture of Expertsの設定
     """
 
     dim: StrictInt = Field(
