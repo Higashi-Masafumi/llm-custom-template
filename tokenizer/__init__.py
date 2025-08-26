@@ -1,3 +1,3 @@
-from .sentencepiece_tokenizer import Tokenizer
+from .sentencepiece_tokenizer import SentencePieceTokenizer
 
-__all__ = ["Tokenizer"]
+__all__ = ["SentencePieceTokenizer"]

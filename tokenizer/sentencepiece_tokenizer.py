@@ -3,7 +3,7 @@ from pathlib import Path
 from sentencepiece import SentencePieceProcessor
 
 
-class Tokenizer:
+class SentencePieceTokenizer:
     """Tokenizer class using sentencepiece.(https://arxiv.org/pdf/1808.06226)
 
     Args:
