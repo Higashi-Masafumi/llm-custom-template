@@ -2,8 +2,10 @@ from pathlib import Path
 
 from sentencepiece import SentencePieceProcessor
 
+from tokenizer.i_tokenizer import ITokenizer
 
-class SentencePieceTokenizer:
+
+class SentencePieceTokenizer(ITokenizer):
     """Tokenizer class using sentencepiece.(https://arxiv.org/pdf/1808.06226)
 
     Args:
